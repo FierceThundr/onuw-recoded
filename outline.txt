@@ -1,0 +1,72 @@
+Refactor data structure
+	Character order (List of character IDs in order)
+	Data structure
+		Players
+			Role
+				Subrole ()
+			Mark
+			Artifact
+			Number
+			Protected
+		
+Refactor night processing
+	Iterate over character order
+		If a character is in play, call processing for the player
+		Otherwise, skip processing
+		
+Refactor interactions
+	Create premade XML for character interfaces
+	Create generalized function that accepts a player to show the interface to and id of a character to process
+
+Concepts
+	Log player responses
+	Make vote now a majority vote
+	Make pause promoted only
+	
+Master night order list with every possible phase
+	Phases become active if the matching character is in play
+	Phases will have an array of players which will wake for them
+	If a role would result in them being forced to undertake another phase, that phase will be given a reference to the player who must take that phase due to player action
+	
+	
+	
+
+
+
+
+
+===============[Final Concepts]
+
+------[Data Structure]
+
+data                        (General data object)
+	roles                     (Role data array)
+		{role_number}           (An object containing data for a particular role)
+			role_id               (A unique reference to the role)
+			edition               (A value to tell which edition of the game the role originates from)
+			card_image            (A link to the card image)
+			name                  (The name of the role)
+			description           (The description of how the role functions in game)
+	order                     (Night order array)
+		{phase_number}          (An object containing data for a particular phase in the night order)
+			phase_name            (The name of the role or event that this phase is about)
+			wakes                 (Whether the role wakes up during the night)
+			parents               (The role IDs that must be in play for this phase to occur)
+			players               (The players who will wake up for this phase)
+			special               (An alternative list of players that require a different process to handle correctly during a phase)
+			narrator              (The sound clip to play for this phase)
+	game                      (General round data object)
+		players                 (An object containing the data for the players in the current round)
+			{player_color}        (An object of data for a particular player in the game)
+				role                (An object of data for the role the player currently has)
+					{...}             (The role object will contain different data depending on the role in question)
+				mark                (The id of the mark the player currently owns -1)
+				artifact            (The id of the currently owned artifact or -1)
+				protected           (A true or false valye of whether the player is currently protected)
+				number              (The number the player is currently assigned)
+		center                  (An array containing the roles in the 4 center positions, if not in play the fourth position contains -1)
+		flags                   (An object containing additional flags for special game events such as ripples or the oracle target event)  
+				
+------[Night Functions]
+
+primary                     (Iterate over the night order and )
