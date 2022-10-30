@@ -52,52 +52,52 @@ Master night order list with every possible phase
 
 ------[Base]
 
-[Doppleganger]                @ !!  (Team)          ? (Vote)          ? (Ability) Must choose another players card and assume that as your role, depending on the role perform it now or add them to the necessary night order.
-[Werewolf]                    @ !   (Team) Werewolf   (Vote) Werewolf   (Ability) Sees other werewolves, if solo may view a center card.
-[Werewolf]                    @ !   (Team) Werewolf   (Vote) Werewolf   (Ability) Sees other werewolves, if solo may view a center card.
-[Minion]                        !   (Team) Werewolf   (Vote) None       (Ability) Sees werewolf players. If no vampire is in play, they win if a villager is killed.
+[Doppleganger]                @ !!  (Team)          ? (Ability) Must choose another players card and assume that as your role, depending on the role perform it now or add them to the necessary night order.
+[Werewolf]                    @ !   (Team) Werewolf   (Ability) Sees other werewolves, if solo may view a center card.
+[Werewolf]                    @ !   (Team) Werewolf   (Ability) Sees other werewolves, if solo may view a center card.
+[Minion]                        !   (Team) Werewolf   (Ability) Sees werewolf players. If no vampire is in play, they win if a villager is killed.
 
-[Mason]                         !   (Team) Village    (Vote) Villager   (Ability) Sees the other mason if they are in play.
-[Mason]                         !   (Team) Village    (Vote) Villager   (Ability) Sees the other mason if they are in play.
-[Seer]                        @ !   (Team) Village    (Vote) Villager   (Ability) May choose to see either two center cards or the card of another player.
-[Robber]                      @ !   (Team) Village    (Vote) Villager   (Ability) May choose to switch cards with another player then view their new card.
+[Mason]                         !   (Team) Village    (Ability) Sees the other mason if they are in play.
+[Mason]                         !   (Team) Village    (Ability) Sees the other mason if they are in play.
+[Seer]                        @ !   (Team) Village    (Ability) May choose to see either two center cards or the card of another player.
+[Robber]                      @ !   (Team) Village    (Ability) May choose to switch cards with another player then view their new card.
 
-[Troublemaker]                @ !   (Team) Village    (Vote) Villager   (Ability) May choose to switch cards between two other players.
-[Drunk]                       @ !   (Team) Village    (Vote) Villager   (Ability) Must switch their card with one from the center.
-[Insomniac]                     !   (Team) Village    (Vote) Villager   (Ability) Sees their current card.
-[Hunter]                    -       (Team) Village    (Vote) Villager   (Ability) If killed, the Hunter also kills whoever they voted for.
+[Troublemaker]                @ !   (Team) Village    (Ability) May choose to switch cards between two other players.
+[Drunk]                       @ !   (Team) Village    (Ability) Must switch their card with one from the center.
+[Insomniac]                     !   (Team) Village    (Ability) Sees their current card.
+[Hunter]                    -       (Team) Village    (Ability) If killed, the Hunter also kills whoever they voted for.
 
-[Tanner]                    -       (Team) Tanner     (Vote) Tanner     (Ability) If killed, they win the game.
-[Villager]                          (Team) Village    (Vote) Villager   (Ability) N/A
-[Villager]                          (Team) Village    (Vote) Villager   (Ability) N/A
-[Villager]                          (Team) Village    (Vote) Villager   (Ability) N/A
+[Tanner]                    -       (Team) Tanner     (Ability) If killed, they win the game.
+[Villager]                          (Team) Village    (Ability) N/A
+[Villager]                          (Team) Village    (Ability) N/A
+[Villager]                          (Team) Village    (Ability) N/A
 
 ------[Daybreak]
 
-[Sentinel]                  + @ !!! (Team) Village    (Vote) Villager   (Ability) May choose another player to protect. The protected card may not be viewed, moved, or modified by a curator artifact.  
-[Alpha Wolf]                + @ !   (Team) Werewolf   (Vote) Werewolf   (Ability) Wakes during the werewolf phase. Must choose a non-werewolf player to switch the center werewolf card with.
-[Mystic Wolf]                 @ !   (Team) Werewolf   (Vote) Werewolf   (Ability) Wakes during the werewolf phase. May choose to view the card of another player.
-[Apprentice Seer]             @ !   (Team) Village    (Vote) Villager   (Ability) May choose to view one card from the center.
+[Sentinel]                  + @ !!! (Team) Village    (Ability) May choose another player to protect. The protected card may not be viewed, moved, or modified by a curator artifact.  
+[Alpha Wolf]                + @ !   (Team) Werewolf   (Ability) Wakes during the werewolf phase. Must choose a non-werewolf player to switch the center werewolf card with.
+[Mystic Wolf]                 @ !   (Team) Werewolf   (Ability) Wakes during the werewolf phase. May choose to view the card of another player.
+[Apprentice Seer]             @ !   (Team) Village    (Ability) May choose to view one card from the center.
 
-[Paranormal Investigator]     @ !   (Team) Village  ? (Vote) Villager ? (Ability) May choose to view up to two cards from other players. If they view a werewolf or tanner, they become a werewolf or tanner and may not look at any more cards.
-[Witch]                       @ !   (Team) Village    (Vote) Villager   (Ability) May choose to view and then switch a center card with any player.
-[Village Idiot]               @ !   (Team) Village    (Vote) Villager   (Ability) May choose to move all player cards one space to the left or right.
-[Revealer]                    @ !   (Team) Village    (Vote) Villager   (Ability) May choose to reveal the card of another player. If the revealed card is a werewolf or tanner it is then concealed again.
+[Paranormal Investigator]     @ !   (Team) Village  ? (Ability) May choose to view up to two cards from other players. If they view a werewolf or tanner, they become a werewolf or tanner and may not look at any more cards.
+[Witch]                       @ !   (Team) Village    (Ability) May choose to view and then switch a center card with any player.
+[Village Idiot]               @ !   (Team) Village    (Ability) May choose to move all player cards one space to the left or right.
+[Revealer]                    @ !   (Team) Village    (Ability) May choose to reveal the card of another player. If the revealed card is a werewolf or tanner it is then concealed again.
 
-[Curator]                 ? + @ !   (Team) Village    (Vote) Villager   (Ability) May choose to place a random artifact on a player of their choice.
-[Dream Wolf]                    !   (Team) Werewolf   (Vote) Werewolf   (Ability) Does not wake up with the other werewolves, however they are displayed to the other wolves.
-[Bodyguard]                 -       (Team) Village    (Vote) Villager   (Ability) The player the Bodyguard votes for is protected from the vote. If they are the most voted player, the next most voted player will die instead.
+[Curator]                 ? + @ !   (Team) Village    (Ability) May choose to place a random artifact on a player of their choice.
+[Dream Wolf]                    !   (Team) Werewolf   (Ability) Does not wake up with the other werewolves, however they are displayed to the other wolves.
+[Bodyguard]                 -       (Team) Village    (Ability) The player the Bodyguard votes for is protected from the vote. If they are the most voted player, the next most voted player will die instead.
 
 ------[Vampire]
 
-[Copycat]                     @ !!  (Team)          ? (Vote)          ? (Ability) Must view a center card, going forward the copycat behaves like the role that they viewed and wakes up when that role would.
-[Vampire]                 ^   @ !   (Team) Vampire    (Vote) Vampire    (Ability) Sees other vampires. Must switch the mark of the vampire with a non-vampire player.
-[The Master]              ^ - @ !   (Team) Vampire    (Vote) Vampire    (Ability) Wakes during the vampire phase. If voted for by a vampire, they are protected from the vote. If they are the most voted player, the next most voted player will die instead.
-[The Count]               ^   @ !!  (Team) Vampire    (Vote) Vampire    (Ability) Wakes during the vampire phase. Must place the switch the mark of fear with a non-vampire player.
-[Renfield]                ^   @ !   (Team) Vampire  ? (Vote) None     ? (Ability) Sees vampire players and who currently has the mark of the bat. Must switch the mark of the bat with their current mark. If no vampire in play, they are instead on the village team.
+[Copycat]                     @ !!  (Team)          ? (Ability) Must view a center card, going forward the copycat behaves like the role that they viewed and wakes up when that role would.
+[Vampire]                 ^   @ !   (Team) Vampire    (Ability) Sees other vampires. Must switch the mark of the vampire with a non-vampire player.
+[The Master]              ^ - @ !   (Team) Vampire    (Ability) Wakes during the vampire phase. If voted for by a vampire, they are protected from the vote. If they are the most voted player, the next most voted player will die instead.
+[The Count]               ^   @ !!  (Team) Vampire    (Ability) Wakes during the vampire phase. Must place the switch the mark of fear with a non-vampire player.
+[Renfield]                ^   @ !   (Team) Vampire  ? (Ability) Sees vampire players and who currently has the mark of the bat. Must switch the mark of the bat with their current mark. If no vampire in play, they are instead on the village team.
 
-[Diseased]                ^ - @ !   (Team) Village    (Vote) Villager   (Ability) Must place the mark of the disease on a player sitting next to them. Any player who voted for the Diseased or the player with the mark of the disease can not win.
-[Cupid]                   ^ - @ !   (Team) Village    (Vote) Villager   (Ability)
+[Diseased]                ^ - @ !   (Team) Village    (Ability) Must place the mark of the disease on a player sitting next to them. Any player who voted for the Diseased or the player with the mark of the disease can not win.
+[Cupid]                   ^ - @ !   (Team) Village    (Ability)
 
 
 ===============[Final Concepts]
@@ -105,12 +105,16 @@ Master night order list with every possible phase
 ------[Data Structure]
 
 data                        (General data object)
+	role_type                 (Role type data object)
+		werewolf                (Array of all werewolf role IDs)
+		vampire                 (Array of all vampire role IDs)
+		alien                   (Array of all alien role IDs)
+		villain                 (Array of all villain role IDs)
 	roles                     (Role data object)
 		{role_id}               (An object containing data for a particular role)
 			edition               (A value to tell which edition of the game the role originates from)
 			card_image            (A link to the card image)
 			team                  (The team the role belongs to)
-			vote                  (The team the role belongs to for the purpose of being voted out)
 			name                  (The name of the role)
 			description           (The description of how the role functions in game)
 	order                     (Night order array)
@@ -150,6 +154,11 @@ switchMark(player1,player2) - Switches marks between the specified players, cent
 
 addArtifact(player) - Places a random artifact on the specified player
 addShield(player) - Places a shielf token on the specified player
+
+promptPlayer(array) - Prompts the current awake players for a response. Returns the result.
+promptPlayerMultiple(array,delay) - Prompts the current awake players for a response then goes with the most voted option, if the vote is tied one is picked at random. Returns the result.
+promptPlayerColor(array,disabled) - Prompts the current awake players to choose a color. If any colors are in the disabled array those colors are disabled. Returns the result.
+promptPlayerColorMultiple(array,disabled) - Prompts the current awake players to choose a color then goes with the most voted option, if the vote is tied a color is picked at random. Returns the result.
 
 queryCard(player) - Returns the card id the specified player currently owns
 queryMark(player) - Returns the mark id the specified player currently owns
