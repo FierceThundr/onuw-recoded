@@ -22,6 +22,9 @@ Concepts
 	Log player responses
 	Make vote now a majority vote
 	Make pause promoted only
+	Make marks automatically turn off if a role that requires them is put into play
+	Instead of always closing blindfolds it will first check if the player is or is not included in the next phase and act accordingly
+	Toggle-able warning for the host that a mandatory night action for an in play role was not performed
 	
 Master night order list with every possible phase
 	Phases become active if the matching character is in play
@@ -33,6 +36,68 @@ Master night order list with every possible phase
 
 
 
+===============[Role Overview]
+
+     - Does not have a night interaction
+!    - Self-contained ability that has no overarching effect
+!!   - Self-contained ability that but can/does modifies the night order
+!!!  - Ability that interferes or modifies the interactions of other abilities
+?    - Ability contains randomized aspects
+*    - Ability can invoke major changes to gameplay that must be announced
+-    - Ability changes who wins or is invoked after voting has concluded
++    - Requires additional dedicated setup code
+@    - Requires input at night from the player
+^    - Requires marks to be in play
+
+
+------[Base]
+
+[Doppleganger]                @ !!  (Team)          ? (Vote)          ? (Ability) Must choose another players card and assume that as your role, depending on the role perform it now or add them to the necessary night order.
+[Werewolf]                    @ !   (Team) Werewolf   (Vote) Werewolf   (Ability) Sees other werewolves, if solo may view a center card.
+[Werewolf]                    @ !   (Team) Werewolf   (Vote) Werewolf   (Ability) Sees other werewolves, if solo may view a center card.
+[Minion]                        !   (Team) Werewolf   (Vote) None       (Ability) Sees werewolf players. If no vampire is in play, they win if a villager is killed.
+
+[Mason]                         !   (Team) Village    (Vote) Villager   (Ability) Sees the other mason if they are in play.
+[Mason]                         !   (Team) Village    (Vote) Villager   (Ability) Sees the other mason if they are in play.
+[Seer]                        @ !   (Team) Village    (Vote) Villager   (Ability) May choose to see either two center cards or the card of another player.
+[Robber]                      @ !   (Team) Village    (Vote) Villager   (Ability) May choose to switch cards with another player then view their new card.
+
+[Troublemaker]                @ !   (Team) Village    (Vote) Villager   (Ability) May choose to switch cards between two other players.
+[Drunk]                       @ !   (Team) Village    (Vote) Villager   (Ability) Must switch their card with one from the center.
+[Insomniac]                     !   (Team) Village    (Vote) Villager   (Ability) Sees their current card.
+[Hunter]                    -       (Team) Village    (Vote) Villager   (Ability) If killed, the Hunter also kills whoever they voted for.
+
+[Tanner]                    -       (Team) Tanner     (Vote) Tanner     (Ability) If killed, they win the game.
+[Villager]                          (Team) Village    (Vote) Villager   (Ability) N/A
+[Villager]                          (Team) Village    (Vote) Villager   (Ability) N/A
+[Villager]                          (Team) Village    (Vote) Villager   (Ability) N/A
+
+------[Daybreak]
+
+[Sentinel]                  + @ !!! (Team) Village    (Vote) Villager   (Ability) May choose another player to protect. The protected card may not be viewed, moved, or modified by a curator artifact.  
+[Alpha Wolf]                + @ !   (Team) Werewolf   (Vote) Werewolf   (Ability) Wakes during the werewolf phase. Must choose a non-werewolf player to switch the center werewolf card with.
+[Mystic Wolf]                 @ !   (Team) Werewolf   (Vote) Werewolf   (Ability) Wakes during the werewolf phase. May choose to view the card of another player.
+[Apprentice Seer]             @ !   (Team) Village    (Vote) Villager   (Ability) May choose to view one card from the center.
+
+[Paranormal Investigator]     @ !   (Team) Village  ? (Vote) Villager ? (Ability) May choose to view up to two cards from other players. If they view a werewolf or tanner, they become a werewolf or tanner and may not look at any more cards.
+[Witch]                       @ !   (Team) Village    (Vote) Villager   (Ability) May choose to view and then switch a center card with any player.
+[Village Idiot]               @ !   (Team) Village    (Vote) Villager   (Ability) May choose to move all player cards one space to the left or right.
+[Revealer]                    @ !   (Team) Village    (Vote) Villager   (Ability) May choose to reveal the card of another player. If the revealed card is a werewolf or tanner it is then concealed again.
+
+[Curator]                 ? + @ !   (Team) Village    (Vote) Villager   (Ability) May choose to place a random artifact on a player of their choice.
+[Dream Wolf]                    !   (Team) Werewolf   (Vote) Werewolf   (Ability) Does not wake up with the other werewolves, however they are displayed to the other wolves.
+[Bodyguard]                 -       (Team) Village    (Vote) Villager   (Ability) The player the Bodyguard votes for is protected from the vote. If they are the most voted player, the next most voted player will die instead.
+
+------[Vampire]
+
+[Copycat]                     @ !!  (Team)          ? (Vote)          ? (Ability) Must view a center card, going forward the copycat behaves like the role that they viewed and wakes up when that role would.
+[Vampire]                 ^   @ !   (Team) Vampire    (Vote) Vampire    (Ability) Sees other vampires. Must switch the mark of the vampire with a non-vampire player.
+[The Master]              ^ - @ !   (Team) Vampire    (Vote) Vampire    (Ability) Wakes during the vampire phase. If voted for by a vampire, they are protected from the vote. If they are the most voted player, the next most voted player will die instead.
+[The Count]               ^   @ !!  (Team) Vampire    (Vote) Vampire    (Ability) Wakes during the vampire phase. Must place the switch the mark of fear with a non-vampire player.
+[Renfield]                ^   @ !   (Team) Vampire  ? (Vote) None     ? (Ability) Sees vampire players and who currently has the mark of the bat. Must switch the mark of the bat with their current mark. If no vampire in play, they are instead on the village team.
+
+[Diseased]                ^ - @ !   (Team) Village    (Vote) Villager   (Ability) Must place the mark of the disease on a player sitting next to them. Any player who voted for the Diseased or the player with the mark of the disease can not win.
+[Cupid]                   ^ - @ !   (Team) Village    (Vote) Villager   (Ability)
 
 
 ===============[Final Concepts]
@@ -40,11 +105,12 @@ Master night order list with every possible phase
 ------[Data Structure]
 
 data                        (General data object)
-	roles                     (Role data array)
-		{role_number}           (An object containing data for a particular role)
-			role_id               (A unique reference to the role)
+	roles                     (Role data object)
+		{role_id}               (An object containing data for a particular role)
 			edition               (A value to tell which edition of the game the role originates from)
 			card_image            (A link to the card image)
+			team                  (The team the role belongs to)
+			vote                  (The team the role belongs to for the purpose of being voted out)
 			name                  (The name of the role)
 			description           (The description of how the role functions in game)
 	order                     (Night order array)
@@ -52,9 +118,14 @@ data                        (General data object)
 			phase_name            (The name of the role or event that this phase is about)
 			wakes                 (Whether the role wakes up during the night)
 			parents               (The role IDs that must be in play for this phase to occur)
-			players               (The players who will wake up for this phase)
+			roles                 (The roles that will wake during the phase)
+			marks                 (The marks that will wake during the phase)
 			special               (An alternative list of players that require a different process to handle correctly during a phase)
-			narrator              (The sound clip to play for this phase)
+			message               (The possible messages to send for this phase)
+				{object}            (A possible message object)
+					scenario          (A scenario including a set of roles that must be in play to use the attached message and narrator line)
+					message           (The message to send in chat for this scenario)
+					narrator          (The narrator message for this scenario)
 	game                      (General round data object)
 		players                 (An object containing the data for the players in the current round)
 			{player_color}        (An object of data for a particular player in the game)
@@ -65,8 +136,23 @@ data                        (General data object)
 				protected           (A true or false valye of whether the player is currently protected)
 				number              (The number the player is currently assigned)
 		center                  (An array containing the roles in the 4 center positions, if not in play the fourth position contains -1)
-		flags                   (An object containing additional flags for special game events such as ripples or the oracle target event)  
+		flags                   (An object containing additional flags for special game events such as ripples or the oracle target event)
 				
 ------[Night Functions]
 
-primary                     (Iterate over the night order and )
+viewCard(player) - Reveals the card of the specified player to all players currently awake
+switchCard(player1,player2) - Switches cards between the specified players, center spaces be given specific values to specify them instead
+revealCard(player) - Reveals the card of the specified player permanently
+displayCard(player,card) - Displays the specified card in front of the specified player
+
+viewMark(player) - Reveals the mark of the specified player to all players currently awake
+switchMark(player1,player2) - Switches marks between the specified players, center spaces be given specific values to specify them instead
+
+addArtifact(player) - Places a random artifact on the specified player
+addShield(player) - Places a shielf token on the specified player
+
+queryCard(player) - Returns the card id the specified player currently owns
+queryMark(player) - Returns the mark id the specified player currently owns
+
+randomChoice(choices,amount) - Returns an array containing a random selection of the specified number from the specified options
+randomValue(minimum,maximum) - Returns a random number in the specified range 
