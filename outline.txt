@@ -97,7 +97,28 @@ Master night order list with every possible phase
 [Renfield]                ^   @ !   (Team) Vampire  ? (Ability) Sees vampire players and who currently has the mark of the bat. Must switch the mark of the bat with their current mark. If no vampire in play, they are instead on the village team.
 
 [Diseased]                ^ - @ !   (Team) Village    (Ability) Must place the mark of the disease on a player sitting next to them. Any player who voted for the Diseased or the player with the mark of the disease can not win.
-[Cupid]                   ^ - @ !   (Team) Village    (Ability)
+[Cupid]                   ^ - @ !   (Team) Village    (Ability) May choose to switch up to two players mark with marks of love.
+[Instigator]              ^ - @ !   (Team) Village    (Ability) May choose to switch the mark of traitor with any player.
+[Priest]                  ^   @ !   (Team) Village    (Ability) Must place a mark of clarity in front of themselves. May also choose to place the second mark of clarity in front of another player.
+[Assassin]                ^ - @ !   (Team) Assassin   (Ability) Must place the mark of the assassin in front a player of their choice. You only win if the player with the mark of the assassin is killed.
+
+[Apprentice Assassin]     ^ - @ !   (Team) Assassin   (Ability) Sees the Assassin. If the Assassin is not in play, they instead act as the Assassin would.
+[Marksman]                    @ !   (Team) Village    (Ability) May choose to view a players mark and/or a different players card.
+[Pickpocket]              ^   @ !   (Team) Village    (Ability) May choose to switch marks with another player then view their new mark.
+[Gremlin]                     @ !   (Team) Village    (Ability) May choose to swap either cards between any two players.
+
+------[Alien]
+
+[Oracle]                  ? * @ !   (Team) Village    (Ability) The Oracle ability is decided randomly.
+[Alien]                   ?   @ !!  (Team) Alien      (Ability) Sees other aliens. Then, the game may also allow an additional effect.
+[Alien]                   ?   @ !!  (Team) Alien      (Ability) Sees other aliens. Then, the game may also allow an additional effect.
+[Synthetic Alien]           -   !   (Team) Synthetic  (Ability) If killed, they win the game.
+
+[Cow]                           !   (Team) Village    (Ability) During the alien phase, learns if either of their neighbors is an alien. They are also displayed to alien during the phase.
+[Groob]                     -   !   (Team) Alien    ? (Ability) Wakes during the alien phase. Sees if Zerb is in play. If they are, Groob instead wins if Zerb is killed while they stay alive.
+[Zerb]                      -   !   (Team) Alien    ? (Ability) Wakes during the alien phase. Sees if Groob is in play. If they are, Zerb instead wins if Groob is killed while they stay alive.
+
+
 
 
 ===============[Final Concepts]
@@ -133,11 +154,12 @@ data                        (General data object)
 	game                      (General round data object)
 		players                 (An object containing the data for the players in the current round)
 			{player_color}        (An object of data for a particular player in the game)
+				team                (The team the player is on, normally -1 which defers to the player's role, mark, or artifact)
 				role                (An object of data for the role the player currently has)
 					{...}             (The role object will contain different data depending on the role in question)
 				mark                (The id of the mark the player currently owns -1)
 				artifact            (The id of the currently owned artifact or -1)
-				protected           (A true or false valye of whether the player is currently protected)
+				shielded            (A true or false valye of whether the player is currently protected)
 				number              (The number the player is currently assigned)
 		center                  (An array containing the roles in the 4 center positions, if not in play the fourth position contains -1)
 		flags                   (An object containing additional flags for special game events such as ripples or the oracle target event)
